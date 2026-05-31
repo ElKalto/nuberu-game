@@ -1,0 +1,290 @@
+[
+  {
+    "id": "event_village_notice",
+    "title": "Tablón de avisos",
+    "description": "Hay tres notas clavadas. Dos están ilegibles por la humedad. La tercera dice: 'No llevéis monedas al monte. Las monedas llaman al Nuberu.'",
+    "choices": [
+      {
+        "id": "choice_read_notice",
+        "label": "Arrancar la nota",
+        "outcomes": [
+          { "type": "flag", "value": "read_notice" },
+          { "type": "item", "value": "note_warning" }
+        ]
+      },
+      {
+        "id": "choice_ignore_notice",
+        "label": "Dejarlo estar",
+        "outcomes": []
+      }
+    ]
+  },
+  {
+    "id": "event_tavern_barman",
+    "title": "El tabernero",
+    "description": "Te mira por fin. 'Otro que sube al monte. Los que vuelven no hablan. Los que hablan no vuelven.' Se gira y no dice más.",
+    "choices": [
+      {
+        "id": "choice_ask_nuberu",
+        "label": "Preguntarle por el Nuberu",
+        "outcomes": [
+          { "type": "flag", "value": "asked_nuberu" },
+          { "type": "lore", "fragmentId": "lore_nuberu_01" }
+        ]
+      },
+      {
+        "id": "choice_ask_explorers",
+        "label": "Preguntarle por los exploradores",
+        "outcomes": [
+          { "type": "lore", "fragmentId": "lore_explorers_01" }
+        ]
+      },
+      {
+        "id": "choice_leave_tavern",
+        "label": "Marcharse sin hablar",
+        "outcomes": []
+      }
+    ]
+  },
+  {
+    "id": "event_tavern_names",
+    "title": "Los nombres grabados",
+    "description": "Hay docenas de nombres. Algunos tienen una fecha debajo. Otros tienen una cruz. Buscas sin querer el tuyo y no lo encuentras. Todavía.",
+    "choices": [
+      {
+        "id": "choice_names_count",
+        "label": "Contar las cruces",
+        "outcomes": [
+          { "type": "flag", "value": "counted_crosses" },
+          { "type": "lore", "fragmentId": "lore_names_01" }
+        ]
+      },
+      {
+        "id": "choice_names_leave",
+        "label": "Apartar la vista",
+        "outcomes": []
+      }
+    ]
+  },
+  {
+    "id": "event_chest_open",
+    "title": "El Arcón",
+    "description": "Dentro hay un trozo de tela con un mapa tosco, una vela casi consumida y una piedra negra con forma de nube. Alguien dejó esto aquí a propósito.",
+    "choices": [
+      {
+        "id": "choice_take_map",
+        "label": "Coger el mapa",
+        "outcomes": [
+          { "type": "item", "value": "item_map_rough" }
+        ]
+      },
+      {
+        "id": "choice_take_stone",
+        "label": "Coger la piedra negra",
+        "outcomes": [
+          { "type": "item", "value": "item_nuberu_stone" },
+          { "type": "flag", "value": "has_nuberu_stone" }
+        ]
+      },
+      {
+        "id": "choice_take_candle",
+        "label": "Coger la vela",
+        "outcomes": [
+          { "type": "item", "value": "item_candle" },
+          { "type": "flag", "value": "has_candle" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "event_path_shrine",
+    "title": "Piedra con marcas",
+    "description": "Una piedra baja cubierta de espirales y líneas. Reconoces el símbolo del Nuberu aunque no sabes cómo. Alguien dejó flores secas a los pies.",
+    "choices": [
+      {
+        "id": "choice_shrine_touch",
+        "label": "Tocar la piedra",
+        "outcomes": [
+          { "type": "flag", "value": "found_spiral" },
+          { "type": "lore", "fragmentId": "lore_spiral_01" }
+        ]
+      },
+      {
+        "id": "choice_shrine_pass",
+        "label": "Pasar de largo",
+        "outcomes": []
+      }
+    ]
+  },
+  {
+    "id": "event_path_figure",
+    "title": "Figura entre la niebla",
+    "description": "Hay algo ahí. Demasiado quieto para ser un animal. Demasiado alto para ser un niño. Cuando parpadeas, ya no está. En el suelo, una huella que no es de bota.",
+    "choices": [
+      {
+        "id": "choice_figure_follow",
+        "label": "Seguir la huella",
+        "outcomes": [
+          { "type": "flag", "value": "followed_figure" },
+          { "type": "lore", "fragmentId": "lore_figure_01" }
+        ]
+      },
+      {
+        "id": "choice_figure_ignore",
+        "label": "Ignorarlo y avanzar",
+        "outcomes": []
+      }
+    ]
+  },
+  {
+    "id": "event_dungeon_spiral",
+    "title": "La espiral de la entrada",
+    "description": "La espiral está tallada con precisión extraña para este lugar. En el centro hay una marca más pequeña, reciente. Alguien estuvo aquí antes que tú esta misma semana.",
+    "choices": [
+      {
+        "id": "choice_spiral_study",
+        "label": "Estudiarla despacio",
+        "outcomes": [
+          { "type": "flag", "value": "found_spiral" },
+          { "type": "lore", "fragmentId": "lore_spiral_02" }
+        ]
+      },
+      {
+        "id": "choice_spiral_pass",
+        "label": "Entrar sin detenerte",
+        "outcomes": []
+      }
+    ]
+  },
+  {
+    "id": "event_hall_bones",
+    "title": "Nicho de los huesos",
+    "description": "Son huesos pequeños. De animal, probablemente. Están dispuestos con cuidado, no arrojados. Esto es una ofrenda, no un resto.",
+    "choices": [
+      {
+        "id": "choice_bones_examine",
+        "label": "Examinarlos con cuidado",
+        "outcomes": [
+          { "type": "lore", "fragmentId": "lore_offering_01" }
+        ]
+      },
+      {
+        "id": "choice_bones_leave",
+        "label": "No tocarlos",
+        "outcomes": [
+          { "type": "flag", "value": "respected_offering" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "event_hall_coins",
+    "title": "Nicho de las monedas",
+    "description": "Cuatro monedas viejas. El metal es extraño, no reconoces el reino. En el reverso hay una cara sin rasgos. Recuerdas la nota del tablón.",
+    "choices": [
+      {
+        "id": "choice_coins_take",
+        "label": "Coger las monedas",
+        "outcomes": [
+          { "type": "item", "value": "item_old_coins" },
+          { "type": "flag", "value": "took_coins" },
+          { "type": "damage", "amount": 10 }
+        ]
+      },
+      {
+        "id": "choice_coins_leave",
+        "label": "Dejarlas donde están",
+        "outcomes": [
+          { "type": "flag", "value": "left_coins" }
+        ]
+      },
+      {
+        "id": "choice_coins_warn",
+        "label": "Recordar la advertencia y retroceder",
+        "condition": "read_notice",
+        "outcomes": [
+          { "type": "flag", "value": "heeded_warning" },
+          { "type": "lore", "fragmentId": "lore_coins_01" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "event_hall_empty",
+    "title": "Nicho vacío",
+    "description": "Vacío no. Hay marcas en la piedra donde había algo apoyado durante mucho tiempo. Sea lo que fuese, alguien lo cogió. Recientemente.",
+    "choices": [
+      {
+        "id": "choice_empty_touch",
+        "label": "Pasar la mano por las marcas",
+        "outcomes": [
+          { "type": "lore", "fragmentId": "lore_empty_niche_01" }
+        ]
+      },
+      {
+        "id": "choice_empty_leave",
+        "label": "Seguir adelante",
+        "outcomes": []
+      }
+    ]
+  },
+  {
+    "id": "event_nuberu_presence",
+    "title": "El viento habla",
+    "description": "El viento sube desde el suelo y rodea tus tobillos. No es frío. Es casi cálido. Escuchas algo que no son palabras pero que entiendes igual: 'Ya era hora.'",
+    "choices": [
+      {
+        "id": "choice_presence_answer",
+        "label": "Responder en voz alta",
+        "outcomes": [
+          { "type": "flag", "value": "spoke_to_nuberu" },
+          { "type": "lore", "fragmentId": "lore_nuberu_02" }
+        ]
+      },
+      {
+        "id": "choice_presence_silent",
+        "label": "Quedarte en silencio",
+        "outcomes": [
+          { "type": "flag", "value": "silent_before_nuberu" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "event_depths_stone",
+    "title": "La piedra escrita",
+    "description": "El texto es en asturiano antiguo. Reconoces algunas palabras: 'tormenta', 'memoria', 'los que olvidan'. El resto se escapa. Pero la última línea es clara: 'Él espera que recuerdes.'",
+    "choices": [
+      {
+        "id": "choice_stone_copy",
+        "label": "Copiar el texto",
+        "outcomes": [
+          { "type": "item", "value": "item_stone_rubbing" },
+          { "type": "lore", "fragmentId": "lore_stone_01" }
+        ]
+      },
+      {
+        "id": "choice_stone_read",
+        "label": "Solo leerlo",
+        "outcomes": [
+          { "type": "lore", "fragmentId": "lore_stone_01" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "event_depths_lore",
+    "title": "El símbolo del techo",
+    "description": "Es la misma espiral que viste antes, pero aquí ocupa todo el techo. Y en el centro hay una figura. Alta. Con nubes en lugar de cabeza. El Nuberu no es una metáfora.",
+    "choices": [
+      {
+        "id": "choice_lore_absorb",
+        "label": "Mirarlo hasta entenderlo",
+        "outcomes": [
+          { "type": "flag", "value": "understood_nuberu" },
+          { "type": "lore", "fragmentId": "lore_nuberu_03" }
+        ]
+      }
+    ]
+  }
+]
