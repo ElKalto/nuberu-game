@@ -1,0 +1,104 @@
+[
+  {
+    "id": "dungeon_01_entrance",
+    "type": "dungeon",
+    "title": "Entrada de la Cueva del Nuberu",
+    "description": "La boca de la cueva huele a tierra mojada y a algo más antiguo. Alguien grabó una espiral en la piedra de la entrada. La antorcha tiembla sin viento.",
+    "backgroundImage": "/assets/scenes/dungeon_01_entrance.jpg",
+    "ambientSound": "/assets/audio/cave_drip.mp3",
+    "hotspots": [
+      {
+        "id": "hs_d1_deeper",
+        "label": "Avanzar al interior",
+        "action": "navigate",
+        "targetNodeId": "dungeon_01_hall",
+        "position": { "x": 50, "y": 50 }
+      },
+      {
+        "id": "hs_d1_spiral",
+        "label": "Examinar la espiral",
+        "action": "examine",
+        "eventId": "event_dungeon_spiral",
+        "position": { "x": 25, "y": 60 }
+      },
+      {
+        "id": "hs_d1_exit",
+        "label": "Salir al camino",
+        "action": "navigate",
+        "targetNodeId": "path_01_mid",
+        "position": { "x": 10, "y": 75 }
+      }
+    ]
+  },
+  {
+    "id": "dungeon_01_hall",
+    "type": "dungeon",
+    "title": "La Sala de las Ofrendas",
+    "description": "Una sala amplia con tres nichos en la pared. En uno hay huesos. En otro, monedas viejas. El tercero está vacío, pero hay marcas recientes en el suelo.",
+    "backgroundImage": "/assets/scenes/dungeon_01_hall.jpg",
+    "ambientSound": "/assets/audio/cave_deep.mp3",
+    "hotspots": [
+      {
+        "id": "hs_hall_bones",
+        "label": "Nicho de los huesos",
+        "action": "examine",
+        "eventId": "event_hall_bones",
+        "position": { "x": 20, "y": 55 }
+      },
+      {
+        "id": "hs_hall_coins",
+        "label": "Nicho de las monedas",
+        "action": "pickup",
+        "eventId": "event_hall_coins",
+        "position": { "x": 50, "y": 55 }
+      },
+      {
+        "id": "hs_hall_empty",
+        "label": "Nicho vacío",
+        "action": "examine",
+        "eventId": "event_hall_empty",
+        "position": { "x": 80, "y": 55 }
+      },
+      {
+        "id": "hs_hall_deeper",
+        "label": "Pasaje al fondo",
+        "action": "navigate",
+        "targetNodeId": "dungeon_01_depths",
+        "position": { "x": 50, "y": 80 }
+      }
+    ]
+  },
+  {
+    "id": "dungeon_01_depths",
+    "type": "dungeon",
+    "title": "La Cámara del Viento",
+    "description": "El viento aquí no tiene explicación. Viene de abajo. En el centro hay una piedra plana con algo escrito. Sientes que no estás solo.",
+    "backgroundImage": "/assets/scenes/dungeon_01_depths.jpg",
+    "ambientSound": "/assets/audio/wind_cave.mp3",
+    "onEnterEvent": "event_nuberu_presence",
+    "hotspots": [
+      {
+        "id": "hs_depths_stone",
+        "label": "Leer la piedra",
+        "action": "examine",
+        "eventId": "event_depths_stone",
+        "position": { "x": 50, "y": 60 }
+      },
+      {
+        "id": "hs_depths_back",
+        "label": "Retroceder",
+        "action": "navigate",
+        "targetNodeId": "dungeon_01_hall",
+        "position": { "x": 10, "y": 75 }
+      },
+      {
+        "id": "hs_depths_lore",
+        "label": "El símbolo del techo",
+        "action": "examine",
+        "eventId": "event_depths_lore",
+        "condition": "found_spiral",
+        "position": { "x": 70, "y": 30 }
+      }
+    ]
+  }
+]

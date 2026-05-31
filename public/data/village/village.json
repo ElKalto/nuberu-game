@@ -1,0 +1,38 @@
+{
+  "id": "village_main",
+  "type": "village",
+  "title": "Brañavella",
+  "description": "Una aldea encajada entre la niebla y el monte. Las casas de piedra sudan humedad. Alguien encendió un fuego esta mañana, pero no hay nadie a la vista.",
+  "backgroundImage": "/assets/scenes/village_main.jpg",
+  "ambientSound": "/assets/audio/rain_village.mp3",
+  "hotspots": [
+    {
+      "id": "hs_tavern",
+      "label": "La Taberna",
+      "action": "navigate",
+      "targetNodeId": "village_tavern",
+      "position": { "x": 30, "y": 60 }
+    },
+    {
+      "id": "hs_chest",
+      "label": "El Arcón",
+      "action": "navigate",
+      "targetNodeId": "village_chest",
+      "position": { "x": 70, "y": 65 }
+    },
+    {
+      "id": "hs_path",
+      "label": "Camino al monte",
+      "action": "navigate",
+      "targetNodeId": "path_01_start",
+      "position": { "x": 90, "y": 50 }
+    },
+    {
+      "id": "hs_notice",
+      "label": "Tablón de avisos",
+      "action": "examine",
+      "eventId": "event_village_notice",
+      "position": { "x": 50, "y": 55 }
+    }
+  ]
+}
