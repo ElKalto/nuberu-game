@@ -1,0 +1,31 @@
+{
+  "id": "village_tavern",
+  "type": "village",
+  "title": "Taberna del Cuervo",
+  "description": "Huele a sidra y a madera mojada. Un hombre viejo no te mira cuando entras. En la pared hay nombres grabados, algunos tachados.",
+  "backgroundImage": "/assets/scenes/village_tavern.jpg",
+  "ambientSound": "/assets/audio/tavern_ambience.mp3",
+  "hotspots": [
+    {
+      "id": "hs_barman",
+      "label": "El tabernero",
+      "action": "talk",
+      "eventId": "event_tavern_barman",
+      "position": { "x": 50, "y": 45 }
+    },
+    {
+      "id": "hs_names_wall",
+      "label": "Los nombres grabados",
+      "action": "examine",
+      "eventId": "event_tavern_names",
+      "position": { "x": 80, "y": 55 }
+    },
+    {
+      "id": "hs_back_village",
+      "label": "Salir",
+      "action": "navigate",
+      "targetNodeId": "village_main",
+      "position": { "x": 10, "y": 80 }
+    }
+  ]
+}
